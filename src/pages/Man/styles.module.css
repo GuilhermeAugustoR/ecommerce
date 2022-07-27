@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  width: 22vw;
+  height: 50vh;
+  background: rgb(241, 237, 237);
+  margin: 20px;
+  border-radius: 7px;
+}
+
+.item {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}

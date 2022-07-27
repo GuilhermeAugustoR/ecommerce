@@ -9,7 +9,7 @@ export const Header = () => {
         <Link href="/">Next</Link>
       </div>
       <div className={styles.header__menu}>
-        <Link href="/">Masculino</Link>
+        <Link href="/Man">Masculino</Link>
         <Link href="/">Feminino</Link>
         <Link href="/">Acessórios</Link>
         <Link href="/">Outlet</Link>

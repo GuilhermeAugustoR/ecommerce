@@ -1,7 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Carrousel from "../components/Carrousel";
-import { Header } from "../components/Header";
 
 const Home: NextPage = () => {
   return (
@@ -9,11 +7,16 @@ const Home: NextPage = () => {
       <Head>
         <title>Home | Ecomerce</title>
       </Head>
-      <Header />
 
-      <main>
-        <Carrousel />
-      </main>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
+          height: "100%",
+          padding: "10px",
+        }}
+      ></div>
     </>
   );
 };
