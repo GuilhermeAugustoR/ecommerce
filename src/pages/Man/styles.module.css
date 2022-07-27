@@ -1,14 +1,38 @@
+.mainArea {
+  display: grid;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  grid-template-columns: repeat(4, 0.1fr);
+  grid-template-rows: auto 25rem auto;
+
+  grid-template-areas:
+    "header header header"
+    "aside main main"
+    "footer footer footer";
+}
+
 .container {
   display: flex;
-  width: 22vw;
-  height: 50vh;
-  background: rgb(241, 237, 237);
+  flex-direction: row;
+  width: 300px;
+  height: 350px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   margin: 20px;
   border-radius: 7px;
+  justify-content: center;
 }
 
 .item {
+  display: flex;
+  flex-direction: row;
+}
+
+.image {
   padding: 15px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }

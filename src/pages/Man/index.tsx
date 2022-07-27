@@ -4,25 +4,26 @@ import styles from "./styles.module.css";
 import itemMan from "../../../itemMan";
 
 const Man = () => {
+  const [data] = React.useState(itemMan);
   return (
-    <div>
+    <div className={styles.mainArea}>
       <Head>
         <title>Man | Ecomerce</title>
       </Head>
-
-      <div className={styles.container}>
-        <div className={styles.item}>
-          <img
-            width={270}
-            height={150}
-            src="https://picsum.photos/200/300"
-            alt=""
-          />
-          <span>Nome do produto</span>
-          <span>Descrição</span>
-          <span>Valor</span>
-        </div>
-      </div>
+      {data.map((item) => (
+        <>
+          <div className={styles.container}>
+            <div className={styles.item}>
+              <div className={styles.image}>
+                <img width={200} height={200} src={item.image} alt="" />
+                <span>{item.name}</span>
+                <span>{item.description}</span>
+                <span>{item.price}</span>
+              </div>
+            </div>
+          </div>
+        </>
+      ))}
     </div>
   );
 };
