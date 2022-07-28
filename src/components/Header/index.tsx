@@ -15,7 +15,7 @@ export const Header = () => {
         <Link href="/">Outlet</Link>
       </div>
       <div className={styles.header__login}>
-        <Link href="/">Login</Link>
+        <Link href="/Login">Login</Link>
       </div>
     </div>
   );
