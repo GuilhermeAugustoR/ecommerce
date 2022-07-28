@@ -20,12 +20,12 @@ const Login = () => {
 
               <label htmlFor="password">Senha</label>
               <input type="password" />
-              <Link href="#">Esqueceu a senha?</Link>
+              <div className={styles.forgotPass}>
+                <Link href="#">Esqueceu a senha?</Link>
+              </div>
 
               <div className={styles.button}>
-                <button>
-                  <span style={{ alignSelf: "center" }}>Login</span>
-                </button>
+                <button>Login</button>
               </div>
 
               <div className={styles.createAccount}>
