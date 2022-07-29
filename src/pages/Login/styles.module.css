@@ -10,13 +10,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  width: 55%;
-  height: 30rem;
-  margin-top: 5rem;
+  justify-content: space-between;
+  min-width: 40rem;
+  min-height: 40rem;
+  margin-top: 2rem;
   background-color: #f5f5f5;
   border-radius: 7px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (max-width: 1400px) {
+  .loginCard {
+    min-width: 40rem;
+    min-height: 30rem;
+  }
+}
+
+.account {
+  display: flex;
+  flex-direction: column;
 }
 
 .loginHeader {
@@ -28,6 +39,7 @@
 .loginForm {
   display: flex;
   width: 100%;
+  height: fit-content;
 }
 
 .loginFormInput {
@@ -82,6 +94,7 @@
 
 .createAccount a {
   color: #14b8a6;
+  font-weight: bold;
 }
 .createAccount a:hover {
   text-decoration: underline;
@@ -92,16 +105,20 @@
   align-items: center;
   justify-content: center;
   margin-top: 40px;
+  margin-bottom: 10px;
   gap: 10px;
   font-size: 30px;
 }
 
 .button button {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
   border-radius: 7px;
   border: none;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: 30px;
   background-color: #14b8a6;
   color: #000;
   font-size: 0.9rem;
