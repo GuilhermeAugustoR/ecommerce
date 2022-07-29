@@ -41,7 +41,7 @@ const Login = () => {
               />
 
               <div className={styles.forgotPass}>
-                <Link href="#">Esqueceu a senha?</Link>
+                <Link href="/ForgotPassword">Esqueceu a senha?</Link>
               </div>
 
               <div className={styles.button}>
