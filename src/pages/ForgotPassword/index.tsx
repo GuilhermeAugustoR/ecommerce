@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../components/Button";
 import Input from "../../components/Input";
 import styles from "./styles.module.css";
 
@@ -31,7 +32,7 @@ const ForgotPassword = () => {
                 />
 
                 <div className={styles.button}>
-                  <button onChange={() => {}}>Enviar</button>
+                  <Button Title="Enviar" />
                 </div>
               </div>
             </div>

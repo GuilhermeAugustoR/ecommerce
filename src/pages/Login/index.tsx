@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import styles from "./styles.module.css";
 import Input from "../../components/Input";
+import Button from "../../components/Button";
 
 const Login = () => {
   const [email, setEmail] = React.useState("");
@@ -45,7 +46,7 @@ const Login = () => {
               </div>
 
               <div className={styles.button}>
-                <button>Login</button>
+                <Button Title="Login" />
               </div>
             </div>
           </div>

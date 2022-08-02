@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Button from "../../components/Button";
 import Input from "../../components/Input";
 import styles from "./styles.module.css";
 
@@ -71,8 +72,9 @@ const Register = () => {
               />
             </div>
           </div>
+
           <div className={styles.button}>
-            <button>Cadastrar</button>
+            <Button Title="Cadastrar" />
           </div>
         </div>
       </div>
