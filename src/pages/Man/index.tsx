@@ -22,7 +22,7 @@ const Man = () => {
                   width={200}
                   height={200}
                   src={item.image}
-                  alt=""
+                  alt="image"
                 />
                 <span className={styles.name}>{item.name}</span>
                 <span className={styles.price}>{item.price}</span>

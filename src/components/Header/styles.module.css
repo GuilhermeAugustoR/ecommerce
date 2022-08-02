@@ -18,7 +18,7 @@
   cursor: pointer;
 }
 .header__logo a {
-  color: #38B2AC;
+  color: #38b2ac;
   text-decoration: none;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .header__menu a:hover {
-  color: #38B2AC;
+  color: #38b2ac;
 }
 
 .header__login {
@@ -46,11 +46,29 @@
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
-  font-size: 1rem;
+  color: #393939;
+}
+
+.ShoppingCart {
+  display: flex;
+  margin-right: 1.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #000;
   text-decoration: none;
 }
-.header__login a:hover {
-  color: #38B2AC;
+.ShoppingCart:hover {
+  color: #38b2ac;
+}
+
+.Login {
+  display: flex;
+  margin-right: 1rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+.Login:hover {
+  color: #38b2ac;
 }

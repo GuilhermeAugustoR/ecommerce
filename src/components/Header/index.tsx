@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React from "react";
+import { FaUserCircle } from "react-icons/fa";
+import { BsCart3 } from "react-icons/bs";
 import styles from "./styles.module.css";
 
 export const Header = () => {
@@ -15,7 +17,17 @@ export const Header = () => {
         <Link href="/">Outlet</Link>
       </div>
       <div className={styles.header__login}>
-        <Link href="/Login">Login</Link>
+        <div className={styles.ShoppingCart}>
+          <Link href="/ShoppingCart">
+            <BsCart3 style={{ cursor: "pointer" }} />
+          </Link>
+        </div>
+
+        <div className={styles.Login}>
+          <Link href="/Login">
+            <FaUserCircle style={{ cursor: "pointer" }} />
+          </Link>
+        </div>
       </div>
     </div>
   );
