@@ -8,6 +8,8 @@ interface IProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   htmlFor?: string;
+  maxLength?: number;
+  disabled?: boolean;
 }
 
 const Input = ({
@@ -17,6 +19,8 @@ const Input = ({
   onChange,
   placeholder,
   htmlFor,
+  maxLength,
+  disabled,
 }: IProps) => {
   return (
     <div className={styles.input}>
@@ -27,6 +31,8 @@ const Input = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        maxLength={maxLength}
+        disabled={disabled}
       />
     </div>
   );

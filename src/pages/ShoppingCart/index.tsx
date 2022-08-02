@@ -32,8 +32,14 @@ const ShoppingCart = () => {
                 <Input
                   placeholder="Digite seu CEP"
                   value={cep}
+                  maxLength={10}
                   onChange={(e) => {
-                    setCep(e.target.value);
+                    setCep(
+                      e.target.value
+                        .replace(/\D/g, "")
+                        .replace(/^(\d{2})(\d)/, "$1.$2")
+                        .replace(/\.(\d{3})(\d)/, ".$1-$2")
+                    );
                   }}
                 />
                 <Button Title="OK" />
