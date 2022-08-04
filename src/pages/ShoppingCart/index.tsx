@@ -49,6 +49,7 @@ const ShoppingCart = () => {
           <h1>Forma de Pagamento</h1>
           <div className={styles.payment}>
             <button
+              style={isPix ? { background: "#0d9488" } : {}}
               onClick={() => {
                 setIsPix(true);
                 setIsChicket(false);
@@ -59,6 +60,7 @@ const ShoppingCart = () => {
             </button>
 
             <button
+              style={isTicket ? { background: "#0d9488" } : {}}
               onClick={() => {
                 setIsChicket(true);
                 setIsPix(false);
@@ -69,6 +71,7 @@ const ShoppingCart = () => {
             </button>
 
             <button
+              style={isCreditCard ? { background: "#0d9488" } : {}}
               onClick={() => {
                 setIsCreditCard(true);
                 setIsPix(false);
