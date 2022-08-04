@@ -21,6 +21,20 @@
   margin-top: 0.5rem;
 }
 
+.containerFrete {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-top: 2rem;
+}
+
+.containerFrete text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
 .progressBar {
   display: flex;
   margin-top: 1rem;
@@ -214,7 +228,7 @@
 .input button {
   display: flex;
   margin-left: 2rem;
-  width: 80%;
+  width: 100%;
 }
 
 .input input {
@@ -254,4 +268,51 @@
   width: 100%;
   margin-top: 3rem;
   gap: 10px;
+}
+
+.buttonBuy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #14b8a6;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.buttonBuy:hover {
+  background-color: #20ad9d;
+}
+
+.buttomContinueBuy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid #14b8a6;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.buttomContinueBuy:hover {
+  background-color: #e6e7e7;
+}
+
+.frete {
+  display: flex;
+  width: 100%;
+  margin-top: 0.1rem;
+}
+
+.frete input {
+  display: flex;
+  margin-left: auto;
 }

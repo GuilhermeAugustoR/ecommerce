@@ -1,17 +1,28 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
 import { GoTrashcan } from "react-icons/go";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import ProgressBar from "../../components/ProgressBar";
+import freteOption from "./freteOption";
 import styles from "./styles.module.css";
 
 const ShoppingCart = () => {
   const [cep, setCep] = React.useState("");
   const [plus, setPlus] = React.useState<number>(1);
-  const [price, setPrice] = React.useState<number>(100);
-  const [progress, setProgress] = React.useState<number>(1);
+  const [price] = React.useState<number>(100);
+  const [frete, setFrete] = React.useState<number>(0);
+  const [optionFrete] = React.useState<any[]>(freteOption);
+  const [progress] = React.useState<number>(1);
+  const [isFrete, setIsFrete] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    if (cep.length < 10) {
+      setIsFrete(false);
+    }
+  }, [cep, plus]);
 
   return (
     <div className={styles.mainContainer}>
@@ -42,8 +53,36 @@ const ShoppingCart = () => {
                     );
                   }}
                 />
-                <Button Title="OK" />
+                <Button
+                  Title="OK"
+                  disabled={cep.length < 10}
+                  onClick={() => {
+                    setIsFrete(true);
+                  }}
+                />
               </div>
+
+              {isFrete && (
+                <div className={styles.containerFrete}>
+                  <span className={styles.value}>Frete</span>
+                  {optionFrete.map((item) => (
+                    <div key={item.id} className={styles.frete}>
+                      <Input
+                        htmlFor={item.name}
+                        label={`${item.name} - R$${item.price},00`}
+                        value={item.price}
+                        name="frete"
+                        type="radio"
+                        direction="row"
+                        onChange={(e) => {
+                          setFrete(parseInt(e.target.value));
+                        }}
+                      />
+                    </div>
+                  ))}
+                  <text className={styles.value}>R$ {frete},00</text>
+                </div>
+              )}
             </div>
           </div>
 
@@ -71,6 +110,8 @@ const ShoppingCart = () => {
                       onClick={() => {
                         setPlus(plus - 1);
                       }}
+                      disabled={plus === 1}
+                      style={plus === 1 ? { cursor: "not-allowed" } : {}}
                     >
                       -
                     </button>
@@ -111,16 +152,18 @@ const ShoppingCart = () => {
             </div>
             <div className={styles.resumeProduct}>
               <span className={styles.title}>Valor do Frete:</span>
-              <span className={styles.price}>R$ {price * plus},00</span>
+              <span className={styles.price}>R$ {frete},00</span>
             </div>
             <div className={styles.resumeProduct}>
               <span className={styles.title}>Total a ser pago:</span>
-              <span className={styles.price}>R$ {price * plus},00</span>
+              <span className={styles.price}>R$ {price * plus + frete},00</span>
             </div>
 
             <div className={styles.containerButton}>
-              <Button Title="Ir para o pagamento" />
-              <Button Title="Continuar comprando" />
+              <button className={styles.buttonBuy}>Ir para o pagamento</button>
+              <button className={styles.buttomContinueBuy} onClick={() => {}}>
+                <Link href={"/"}>Continuar Comprando</Link>
+              </button>
             </div>
           </div>
         </div>
