@@ -15,14 +15,168 @@ const ShoppingCart = () => {
   const [price] = React.useState<number>(100);
   const [frete, setFrete] = React.useState<number>(0);
   const [optionFrete] = React.useState<any[]>(freteOption);
-  const [progress] = React.useState<number>(1);
+  const [progress, setProgress] = React.useState<number>(1);
   const [isFrete, setIsFrete] = React.useState<boolean>(false);
+  const [isPayment, setIsPayment] = React.useState<boolean>(false);
+  const [isCreditCard, setIsCreditCard] = React.useState<boolean>(true);
+  const [isPix, setIsPix] = React.useState<boolean>(false);
+  const [isTicket, setIsChicket] = React.useState<boolean>(false);
+
+  const [numberCard, setNumberCard] = React.useState<string>("");
+  const [nameCard, setNameCard] = React.useState<string>("");
+  const [validateCard, setValidateCard] = React.useState<string>("");
+  const [cvvCard, setCvvCard] = React.useState<string>("");
+  const [cpfCard, setCpfCard] = React.useState<string>("");
+  const [dateCard, setDateCard] = React.useState<string>("");
+  const [quantityPayment1] = React.useState<number>(1);
+  const [quantityPayment2] = React.useState<number>(2);
+  const [quantityPayment3] = React.useState<number>(3);
+  const [quantityPayment4] = React.useState<number>(4);
 
   React.useEffect(() => {
     if (cep.length < 10) {
       setIsFrete(false);
     }
   }, [cep, plus]);
+
+  if (isPayment) {
+    return (
+      <div className={styles.mainContainer}>
+        <div className={styles.progressBar}>
+          <ProgressBar progress={progress} />
+        </div>
+        <div className={styles.paymentContainer}>
+          <h1>Forma de Pagamento</h1>
+          <div className={styles.payment}>
+            <button
+              onClick={() => {
+                setIsPix(true);
+                setIsChicket(false);
+                setIsCreditCard(false);
+              }}
+            >
+              PIX
+            </button>
+
+            <button
+              onClick={() => {
+                setIsChicket(true);
+                setIsPix(false);
+                setIsCreditCard(false);
+              }}
+            >
+              Boleto
+            </button>
+
+            <button
+              onClick={() => {
+                setIsCreditCard(true);
+                setIsPix(false);
+                setIsChicket(false);
+              }}
+            >
+              Cartão de Crédito
+            </button>
+          </div>
+
+          {isCreditCard && (
+            <div className={styles.containerFormPayment}>
+              <div className={styles.formPayment}>
+                <Input
+                  label="Numero do Cartão"
+                  placeholder="Digite o numero do cartão"
+                  value={numberCard}
+                  onChange={(e) => {
+                    setNumberCard(
+                      e.target.value
+                        .replace(/\D/g, "")
+                        .replace(/(.{4})/g, "$1 ")
+                        .replace(/\s+$/, "")
+                    );
+                  }}
+                />
+                <Input
+                  label="Nome impresso no Cartão"
+                  placeholder="Digite o nome impresso cartão"
+                  value={nameCard}
+                  onChange={(e) => {
+                    setNameCard(
+                      e.target.value
+                        .replace(/((?:[1-9]\s*))/g, "")
+                        .replace(/[^a-zA-Z ]/g, "")
+                    );
+                  }}
+                />
+              </div>
+
+              <div className={styles.formPayment}>
+                <Input
+                  label="Validade do Cartão"
+                  placeholder="Digite a validade do cartão"
+                  value={validateCard}
+                  maxLength={5}
+                  onChange={(e) => {
+                    setValidateCard(
+                      e.target.value
+                        .replace(/\D/g, "")
+                        .replace(/^(\d{2})(\d{2})/, "$1/$2")
+                    );
+                  }}
+                />
+                <Input
+                  label="Código de Segurança"
+                  placeholder="Digite o código de segurança"
+                  value={cvvCard}
+                  maxLength={3}
+                  onChange={(e) => {
+                    setCvvCard(e.target.value.replace(/\D/g, ""));
+                  }}
+                />
+                <Input
+                  label="CPF do Titular do Cartão"
+                  placeholder="Digite o CPF do titular do cartão"
+                  value={cpfCard}
+                  maxLength={11}
+                  onChange={(e) => {
+                    setCpfCard(
+                      e.target.value
+                        .replace(/\D/g, "")
+                        .replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")
+                    );
+                  }}
+                />
+                <Input
+                  label="Data de Nascimento"
+                  placeholder="Digite a data de nascimento"
+                  value={dateCard}
+                  maxLength={10}
+                  onChange={(e) => {
+                    setDateCard(
+                      e.target.value
+                        .replace(/\D/g, "")
+                        .replace(/(\d{2})(\d{2})(\d{2})/, "$1/$2/$3")
+                    );
+                  }}
+                />
+              </div>
+
+              <div className={styles.formPayment}>
+                <div className={styles.select}>
+                  <label>Forma de pagamento </label>
+                  <select>
+                    <option value={quantityPayment1}>1x sem juros</option>
+                    <option value={quantityPayment2}>2x sem juros</option>
+                    <option value={quantityPayment3}>3x sem juros</option>
+                    <option value={quantityPayment4}>4x sem juros</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.mainContainer}>
@@ -160,8 +314,16 @@ const ShoppingCart = () => {
             </div>
 
             <div className={styles.containerButton}>
-              <button className={styles.buttonBuy}>Ir para o pagamento</button>
-              <button className={styles.buttomContinueBuy} onClick={() => {}}>
+              <button
+                className={styles.buttonBuy}
+                onClick={() => {
+                  setIsPayment(true);
+                  setProgress(progress + 2);
+                }}
+              >
+                Ir para o pagamento
+              </button>
+              <button className={styles.buttomContinueBuy}>
                 <Link href={"/"}>Continuar Comprando</Link>
               </button>
             </div>
