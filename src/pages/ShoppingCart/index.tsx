@@ -14,6 +14,7 @@ const ShoppingCart = () => {
   const [plus, setPlus] = React.useState<number>(1);
   const [price] = React.useState<number>(100);
   const [frete, setFrete] = React.useState<number>(0);
+  const [total, setTotal] = React.useState<number>(price * plus + frete);
   const [optionFrete] = React.useState<any[]>(freteOption);
   const [progress, setProgress] = React.useState<number>(1);
   const [isFrete, setIsFrete] = React.useState<boolean>(false);
@@ -32,6 +33,10 @@ const ShoppingCart = () => {
   const [quantityPayment2] = React.useState<number>(2);
   const [quantityPayment3] = React.useState<number>(3);
   const [quantityPayment4] = React.useState<number>(4);
+
+  React.useEffect(() => {
+    setTotal(price * plus + frete);
+  } , [price, plus, frete]);
 
   React.useEffect(() => {
     if (cep.length < 10) {
@@ -211,11 +216,11 @@ const ShoppingCart = () => {
               <div className={styles.mainTotalTicket}>
                 <div className={styles.totalTicket}>
                   <h2> Total da sua compra</h2>
-                  <h2>R${price},00</h2>
+                  <h2>R${total},00</h2>
                 </div>
                 <div className={styles.totlaDiscontTicket}>
                   <h2>Total via boleto</h2>
-                  <h2 style={{ color: "#05cfbe" }}>R${price * 0.85},00</h2>
+                  <h2 style={{ color: "#05cfbe" }}>R${total * 0.85},00</h2>
                 </div>
               </div>
 
@@ -266,11 +271,11 @@ const ShoppingCart = () => {
               <div className={styles.mainTotalTicket}>
                 <div className={styles.totalTicket}>
                   <h2> Total da sua compra</h2>
-                  <h2>R${price},00</h2>
+                  <h2>R${total},00</h2>
                 </div>
                 <div className={styles.totlaDiscontTicket}>
                   <h2>Total via boleto</h2>
-                  <h2 style={{ color: "#05cfbe" }}>R${price * 0.85},00</h2>
+                  <h2 style={{ color: "#05cfbe" }}>R${total * 0.85},00</h2>
                 </div>
               </div>
 
@@ -422,7 +427,7 @@ const ShoppingCart = () => {
             </div>
             <div className={styles.resumeProduct}>
               <span className={styles.title}>Total a ser pago:</span>
-              <span className={styles.price}>R$ {price * plus + frete},00</span>
+              <span className={styles.price}>R$ {total},00</span>
             </div>
 
             <div className={styles.containerButton}>
