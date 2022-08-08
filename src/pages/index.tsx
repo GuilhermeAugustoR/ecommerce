@@ -2,6 +2,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Carousel from "better-react-carousel";
+import styles from "../../styles/home.module.css";
 
 const Home: NextPage = () => {
   const MyDot = ({ isActive }: any) => (
@@ -10,9 +11,10 @@ const Home: NextPage = () => {
         height: isActive ? "10px" : "6px",
         width: isActive ? "10px" : "6px",
         borderRadius: "50%",
+        // marginBottom: "30px",
         background: isActive ? "#14b8a6" : "#6f6f6f",
       }}
-    ></span>
+    />
   );
   return (
     <>
@@ -20,16 +22,25 @@ const Home: NextPage = () => {
         <title>Home | Ecomerce</title>
       </Head>
 
-      <div style={{ marginTop: 15 }}>
+      <div className={styles.container}>
         <Carousel cols={1} rows={1} loop showDots autoplay={6000} dot={MyDot}>
           <Carousel.Item>
-            <img src="https://picsum.photos/id/1/1100/380" alt="img1" />
+            <img
+              src="https://cdn.dooca.store/739/files/banner-2-site-finna-moda.jpg?v=1632352601&webp=0"
+              alt="img1"
+            />
           </Carousel.Item>
           <Carousel.Item>
-            <img src="https://picsum.photos/id/2/1100/380" alt="img2" />
+            <img
+              src="https://gladius.vteximg.com.br/arquivos/ids/159896/BAnners-de-Categoria-vestu%C3%A1rio2.jpg?v=636888591996800000"
+              alt="img2"
+            />
           </Carousel.Item>
           <Carousel.Item>
-            <img src="https://picsum.photos/id/3/1100/380" alt="img3" />
+            <img
+              src="https://beagle.vteximg.com.br/arquivos/ids/210689/corra%20e%20aproveite.png?v=637935018933400000"
+              alt="img3"
+            />
           </Carousel.Item>
         </Carousel>
       </div>
