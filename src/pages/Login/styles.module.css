@@ -108,11 +108,16 @@
     margin-bottom: 0;
   }
 }
+.createAccount span {
+  font-size: 0.9rem;
+}
 
 .createAccount a {
   color: #14b8a6;
   font-weight: bold;
+  font-size: 0.9rem;
 }
+
 .createAccount a:hover {
   text-decoration: underline;
 }

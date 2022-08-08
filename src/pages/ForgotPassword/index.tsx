@@ -22,7 +22,6 @@ const ForgotPassword = () => {
             <div className={styles.loginForm}>
               <div className={styles.loginFormInput}>
                 <Input
-                  label="Email"
                   type="email"
                   placeholder="Digite seu email"
                   value={email}
