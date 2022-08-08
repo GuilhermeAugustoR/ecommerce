@@ -43,6 +43,27 @@ const Home: NextPage = () => {
             />
           </Carousel.Item>
         </Carousel>
+
+        <div className={styles.content}>
+          <div className={styles.title}>
+            <h1>Ecomerce</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Reprehenderit, quisquam.
+            </p>
+          </div>
+
+          <div className={styles.subImages}>
+            <img
+              src="https://1.bp.blogspot.com/-sppANwvLmws/XvYoIyT2JwI/AAAAAAAAAkQ/2Oh69GvgAYwuZU01c0Nvaf4wTA8CXt4ewCLcBGAsYHQ/s1600/productcard.jpg"
+              alt="img1"
+            />
+            <img
+              src="https://i.ytimg.com/vi/OJJBIAaZv-g/maxresdefault.jpg"
+              alt="img1"
+            />
+          </div>
+        </div>
       </div>
     </>
   );
