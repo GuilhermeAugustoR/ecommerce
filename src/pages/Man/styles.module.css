@@ -7,11 +7,21 @@
   height: fit-content;
   grid-template-columns: repeat(5, 0.1fr);
   grid-template-rows: auto 25rem auto;
-
   grid-template-areas:
     "header header header"
     "aside main main"
     "footer footer footer";
+}
+
+@media only screen and (max-width: 1400px) {
+  .mainArea {
+    grid-template-columns: repeat(4, 0.1fr);
+    grid-template-rows: auto 22rem auto;
+    grid-template-areas:
+      "header header header"
+      "aside main main"
+      "footer footer footer";
+  }
 }
 
 .container {
@@ -49,7 +59,7 @@
 
 .name {
   display: flex;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-top: 15px;
   margin-left: 10px;
 }
@@ -59,4 +69,5 @@
   flex-direction: row;
   margin-top: 30px;
   margin-left: 10px;
+  font-size: 0.9rem;
 }
