@@ -46,14 +46,31 @@ const Home: NextPage = () => {
 
         <div className={styles.content}>
           <div className={styles.title}>
-            <h1>Ecomerce</h1>
+            <h1>Promoção dia dos Pais</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Reprehenderit, quisquam.
             </p>
           </div>
 
-          <div className={styles.subImages}>
+          <div className={styles.subImagesPromotion1}>
+            <img
+              src="https://i.ytimg.com/vi/Ue48xzDjfyE/maxresdefault.jpg"
+              alt="img1"
+            />
+          </div>
+        </div>
+
+        <div className={styles.content}>
+          <div className={styles.title}>
+            <h1>Novidades!</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Reprehenderit, quisquam.
+            </p>
+          </div>
+
+          <div className={styles.subImagesPromotion2}>
             <img
               src="https://1.bp.blogspot.com/-sppANwvLmws/XvYoIyT2JwI/AAAAAAAAAkQ/2Oh69GvgAYwuZU01c0Nvaf4wTA8CXt4ewCLcBGAsYHQ/s1600/productcard.jpg"
               alt="img1"
