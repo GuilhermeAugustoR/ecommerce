@@ -88,6 +88,7 @@ const ShoppingCart = () => {
                 <Input
                   label="Numero do Cartão"
                   placeholder="Digite o numero do cartão"
+                  maxLength={19}
                   value={numberCard}
                   onChange={(e) => {
                     setNumberCard(
@@ -173,6 +174,114 @@ const ShoppingCart = () => {
                     <option value={quantityPayment4}>4x sem juros</option>
                   </select>
                 </div>
+              </div>
+              <div className={styles.containerButtonTicker}>
+                <button className={styles.buttonBack}>
+                  <Link href="/">Voltar para a loja</Link>
+                </button>
+
+                <button className={styles.buttonConfirm}>
+                  <Link href="/">Confirmar compra</Link>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {isTicket && (
+            <div className={styles.containerFormPayment}>
+              <div className={styles.titleTicket}>
+                <h2>Boleto</h2>
+              </div>
+
+              <div className={styles.subTitleTicket}>
+                <h4>
+                  Boleto tem até 15% de desconto* na compra e é a forma de
+                  pagamento que recebe o maior desconto sob o valor total da
+                  compra. Esta é a forma mais vantajosa para quem deseja pagar à
+                  vista. Você poderá efetuar o pagamento do boleto em qualquer
+                  Banco ou Casa Lotérica em qualquer lugar do Brasil, sem
+                  necessidade de confirmação do pagamento. *O desconto poderá
+                  ser concedido ou não até o limite de 15%, podendo ser menor ou
+                  zero, de acordo com o detalhado nas descrições do produto e só
+                  será aplicado às vendas diretas e entregues pelo KaBuM!, não
+                  se aplicando aos produtos de Marketplace.
+                </h4>
+              </div>
+
+              <div className={styles.mainTotalTicket}>
+                <div className={styles.totalTicket}>
+                  <h2> Total da sua compra</h2>
+                  <h2>R${price},00</h2>
+                </div>
+                <div className={styles.totlaDiscontTicket}>
+                  <h2>Total via boleto</h2>
+                  <h2 style={{ color: "#05cfbe" }}>R${price * 0.85},00</h2>
+                </div>
+              </div>
+
+              <div className={styles.containerButtonTicker}>
+                <button className={styles.buttonBack}>
+                  <Link href="/">Voltar para a loja</Link>
+                </button>
+
+                <button className={styles.buttonConfirm}>
+                  <Link href="/">Confirmar compra</Link>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {isPix && (
+            <div className={styles.containerFormPayment}>
+              <div className={styles.titleTicket}>
+                <h2>Pix</h2>
+                <h4>A melhor opção para suas compras à vista</h4>
+              </div>
+
+              <div className={styles.subTitleTicket}>
+                <span>
+                  Pague com PIX e aproveite até 15% OFF. Nessa modalidade, seu
+                  pedido é aprovado instantaneamente, o que torna a expedição do
+                  seu pedido ainda mais rápida. O que você precisa saber antes
+                  de pagar por PIX:
+                  <p>
+                    É necessário possuir uma chave PIX cadastrada no seu Banco;
+                  </p>
+                  <p>
+                    Com o seu celular, basta escanear o QR Code ou copiar o
+                    código para efetivar a compra;
+                  </p>
+                  <p>
+                    O pagamento é processado e debitado do valor em sua conta
+                    corrente;
+                  </p>
+                  Como padrão, o Banco Central limitou os pagamentos no período
+                  das 20h às 06h, a valores de até R$1.000. Mas você pode
+                  solicitar o aumento do limite deste período diretamente com o
+                  seu banco, pela Central de Atendimento ou APP. O prazo de
+                  liberação é de até 48h.
+                </span>
+              </div>
+
+              <div className={styles.mainTotalTicket}>
+                <div className={styles.totalTicket}>
+                  <h2> Total da sua compra</h2>
+                  <h2>R${price},00</h2>
+                </div>
+                <div className={styles.totlaDiscontTicket}>
+                  <h2>Total via boleto</h2>
+                  <h2 style={{ color: "#05cfbe" }}>R${price * 0.85},00</h2>
+                </div>
+              </div>
+
+              <div className={styles.containerButtonTicker}>
+                <button className={styles.buttonBack}>
+                  <Link href="/">Voltar para a loja</Link>
+                </button>
+
+                <button className={styles.buttonConfirm}>
+                  <Link href="/">Confirmar compra</Link>
+                </button>
               </div>
             </div>
           )}

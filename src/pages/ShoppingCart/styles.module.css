@@ -358,9 +358,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
   border-radius: 7px;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .containerFormPayment input {
@@ -391,6 +392,7 @@
   width: 100%;
   height: 100%;
   border-radius: 7px;
+  margin-top: 1rem;
 }
 
 .select {
@@ -411,4 +413,127 @@
   border-radius: 7px;
   font-size: 1rem;
   padding: 0.6rem;
+}
+
+.titleTicket {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.titleTicket h4 {
+  display: flex;
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.subTitleTicket {
+  display: flex;
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.subTitleTicket h4 {
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.subTitleTicket span {
+  margin-top: 0;
+  font-weight: 400;
+}
+
+.mainTotalTicket {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  gap: 1rem;
+}
+
+.totalTicket {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 10rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.totalTicket h2 {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.totlaDiscontTicket {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 10rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.totlaDiscontTicket h2 {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerButtonTicker {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  gap: 2rem;
+}
+
+.buttonBack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  border-radius: 7px;
+  background-color: #e31212;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 12px;
+}
+
+.buttonBack:hover {
+  background-color: #c31212;
+}
+
+.buttonConfirm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  border-radius: 7px;
+  background-color: #14b8a6;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 12px;
+}
+
+.buttonConfirm:hover {
+  background-color: #0d9488;
 }
