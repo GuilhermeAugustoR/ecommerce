@@ -363,7 +363,7 @@ const ShoppingCart = () => {
                 <img
                   width={200}
                   height={200}
-                  src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                  src="https://images.lojanike.com.br/320x320/produto/tenis-air-max-flyknit-racer-nn-DJ6106-300-1-11655156149.jpg"
                   alt="image"
                 />
                 <div className={styles.descriptionProduct}>

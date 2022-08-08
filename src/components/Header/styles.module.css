@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.6rem 1rem;
+  padding: 1.3rem 1rem;
   background-color: #fff;
   border-bottom: 1px solid #d5d2d2;
 }
@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
-  font-size: 1rem;
+  font-size: .9rem;
   font-weight: 600;
   gap: 0.7rem;
 }
@@ -52,7 +52,7 @@
 .ShoppingCart {
   display: flex;
   margin-right: 1.5rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #000;
   text-decoration: none;
@@ -64,7 +64,7 @@
 .Login {
   display: flex;
   margin-right: 1rem;
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #000;
   text-decoration: none;
