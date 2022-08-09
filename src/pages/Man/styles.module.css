@@ -67,7 +67,148 @@
 .price {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin-top: 30px;
   margin-left: 10px;
   font-size: 0.9rem;
+}
+
+/* STEP ITEM */
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 3rem;
+}
+
+.containerItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  height: 73vh;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  border-radius: 7px;
+}
+
+.containerDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.containerDescription h3 {
+  text-align: center;
+  width: 100%;
+  font-size: 1.4rem;
+}
+
+.containerDescription p {
+  text-align: center;
+  width: 90%;
+  font-size: 1rem;
+}
+
+.itemImage {
+  width: 80vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  padding: 1rem;
+}
+
+.itemImage img {
+  width: 100%;
+  height: auto;
+}
+
+.containerItemStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.itemSize {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.itemSize span {
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.containerSize {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.size {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #e6e6e6;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.size:active {
+  transform: translateY(-4px);
+}
+
+.size:hover {
+  background-color: #ccc;
+}
+
+.mainContainerItemStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.containerStars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+}
+
+.star {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.containerStarStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
 }
