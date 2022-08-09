@@ -7,7 +7,7 @@ const Footer = () => {
       <footer>
         <div className={styles.footer}>
           <div className={styles.footerContent}>
-            <h4>Next Ecommerce</h4>
+            <h4>@Next Ecommerce</h4>
           </div>
         </div>
       </footer>
