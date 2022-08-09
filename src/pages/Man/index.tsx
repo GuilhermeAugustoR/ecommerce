@@ -3,9 +3,11 @@ import Head from "next/head";
 import React from "react";
 import styles from "./styles.module.css";
 import itemMan from "../../../itemMan";
+import Modal from "../../components/Modal";
 
 const Man = () => {
   const [data] = React.useState(itemMan);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <div className={styles.mainArea}>
@@ -16,7 +18,7 @@ const Man = () => {
         <>
           <div className={styles.container}>
             <div className={styles.item}>
-              <div className={styles.image}>
+              <div className={styles.image} onClick={() => setIsOpen(true)}>
                 <img
                   key={item.id}
                   width={200}
@@ -31,6 +33,8 @@ const Man = () => {
           </div>
         </>
       ))}
+
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
     </div>
   );
 };
