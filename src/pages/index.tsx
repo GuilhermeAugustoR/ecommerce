@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
+import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Carousel from "better-react-carousel";
 import styles from "../../styles/home.module.css";
+import { BsArrowUp } from "react-icons/bs";
 
 const Home: NextPage = () => {
   const MyDot = ({ isActive }: any) => (
@@ -11,11 +13,11 @@ const Home: NextPage = () => {
         height: isActive ? "10px" : "6px",
         width: isActive ? "10px" : "6px",
         borderRadius: "50%",
-        // marginBottom: "30px",
         background: isActive ? "#14b8a6" : "#6f6f6f",
       }}
     />
   );
+
   return (
     <>
       <Head>
@@ -43,6 +45,12 @@ const Home: NextPage = () => {
             />
           </Carousel.Item>
         </Carousel>
+
+        <div className={styles.scrollToTop}>
+          <a href="#top">
+            <BsArrowUp size={30} />
+          </a>
+        </div>
 
         <div className={styles.content}>
           <div className={styles.title}>
