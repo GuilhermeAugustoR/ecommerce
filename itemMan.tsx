@@ -3,7 +3,8 @@ const itemMan = () => [
     id: 1,
     name: "Item 1",
     price: "R$ 1,00",
-    description: "Description 1",
+    description:
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. Quisquam, quidem.",
     image:
       "https://images.lojanike.com.br/320x320/produto/tenis-air-max-flyknit-racer-nn-DJ6106-300-1-11655156149.jpg",
   },

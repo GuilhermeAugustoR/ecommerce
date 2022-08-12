@@ -3,13 +3,18 @@ import Head from "next/head";
 import React from "react";
 import styles from "./styles.module.css";
 import itemMan from "../../../itemMan";
-import { BsStar, BsStarFill } from "react-icons/bs";
+import { BsStar } from "react-icons/bs";
+import { itemColor, itemSize } from "./item";
 
 const Man = () => {
   const [data] = React.useState<any>(itemMan);
   const [isItem, setIsItem] = React.useState<boolean>(false);
   const [image, setImage] = React.useState<string>();
+  const [name, setName] = React.useState<string>();
   const [description, setDescription] = React.useState<string>();
+  const [color] = React.useState<any[]>(itemColor);
+  const [size] = React.useState<any[]>(itemSize);
+  const [sizeActive, setSizeActive] = React.useState<string>("");
 
   if (isItem) {
     return (
@@ -20,7 +25,7 @@ const Man = () => {
 
         <div className={styles.containerItem}>
           <div className={styles.containerDescription}>
-            <h3>Title</h3>
+            <h3>{name}</h3>
             <p>{description}</p>
           </div>
 
@@ -33,11 +38,17 @@ const Man = () => {
               <div className={styles.itemSize}>
                 <h5>Tamanho</h5>
                 <div className={styles.containerSize}>
-                  <div className={styles.size}>PP</div>
-                  <div className={styles.size}>P</div>
-                  <div className={styles.size}>M</div>
-                  <div className={styles.size}>G</div>
-                  <div className={styles.size}>GG</div>
+                  {size.map((item: any) => (
+                    <div
+                      key={item.id}
+                      className={sizeActive === item.size ? styles.sizeActive : styles.size}
+                      onClick={() => {
+                        setSizeActive(item.size);
+                      }}
+                    >
+                      {item.size}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -48,21 +59,47 @@ const Man = () => {
                 <div>
                   <div className={styles.containerStars}>
                     <div className={styles.star}>
-                      <BsStar size={20} />
+                      <BsStar size={15} />
                     </div>
                     <div className={styles.star}>
-                      <BsStar size={20} />
+                      <BsStar size={15} />
                     </div>
                     <div className={styles.star}>
-                      <BsStar size={20} />
+                      <BsStar size={15} />
                     </div>
                     <div className={styles.star}>
-                      <BsStar size={20} />
+                      <BsStar size={15} />
                     </div>
                     <div className={styles.star}>
-                      <BsStar size={20} />
+                      <BsStar size={15} />
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.containerPrice}>
+              <div className={styles.itemSize}>
+                <text>Valor</text>
+                <div className={styles.containerPriceStyle}>
+                  <div className={styles.priceItem}>
+                    <text>R$ 100,00</text>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.containerColorStyle}>
+              <div className={styles.itemSize}>
+                <h5>Cores</h5>
+                <div className={styles.containerColor}>
+                  {color.map((item: any) => (
+                    <div
+                      key={item.id}
+                      className={styles.color}
+                      style={{ backgroundColor: item.color }}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
@@ -77,7 +114,7 @@ const Man = () => {
       <Head>
         <title>Man | Ecomerce</title>
       </Head>
-      {data.map((item) => (
+      {data.map((item: any) => (
         <>
           <div className={styles.container}>
             <div className={styles.item}>
@@ -87,6 +124,7 @@ const Man = () => {
                   setIsItem(true);
                   setImage(item.image);
                   setDescription(item.description);
+                  setName(item.name);
                 }}
               >
                 <img
