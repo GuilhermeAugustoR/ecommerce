@@ -3,7 +3,7 @@ import Head from "next/head";
 import React from "react";
 import styles from "./styles.module.css";
 import itemMan from "../../../itemMan";
-import { BsStar } from "react-icons/bs";
+import { BsStar, BsStarFill } from "react-icons/bs";
 import { itemColor, itemSize } from "./item";
 
 const Man = () => {
@@ -15,6 +15,8 @@ const Man = () => {
   const [color] = React.useState<any[]>(itemColor);
   const [size] = React.useState<any[]>(itemSize);
   const [sizeActive, setSizeActive] = React.useState<string>("");
+  const [colorActive, setColorActive] = React.useState<string>("");
+  const [rating, setRating] = React.useState<boolean>(false);
 
   if (isItem) {
     return (
@@ -41,7 +43,11 @@ const Man = () => {
                   {size.map((item: any) => (
                     <div
                       key={item.id}
-                      className={sizeActive === item.size ? styles.sizeActive : styles.size}
+                      className={
+                        sizeActive === item.size
+                          ? styles.sizeActive
+                          : styles.size
+                      }
                       onClick={() => {
                         setSizeActive(item.size);
                       }}
@@ -58,20 +64,65 @@ const Man = () => {
                 <span>Avaliações</span>
                 <div>
                   <div className={styles.containerStars}>
-                    <div className={styles.star}>
-                      <BsStar size={15} />
+                    <div
+                      className={styles.star}
+                      onClick={() => {
+                        setRating(true);
+                      }}
+                    >
+                      {rating ? (
+                        <BsStarFill size={15} color="yellow" />
+                      ) : (
+                        <BsStar size={15} />
+                      )}
                     </div>
-                    <div className={styles.star}>
-                      <BsStar size={15} />
+                    <div
+                      className={styles.star}
+                      onClick={() => {
+                        setRating(true);
+                      }}
+                    >
+                      {rating ? (
+                        <BsStarFill size={15} color="yellow" />
+                      ) : (
+                        <BsStar size={15} />
+                      )}
                     </div>
-                    <div className={styles.star}>
-                      <BsStar size={15} />
+                    <div
+                      className={styles.star}
+                      onClick={() => {
+                        setRating(true);
+                      }}
+                    >
+                      {rating ? (
+                        <BsStarFill size={15} color="yellow" />
+                      ) : (
+                        <BsStar size={15} />
+                      )}
                     </div>
-                    <div className={styles.star}>
-                      <BsStar size={15} />
+                    <div
+                      className={styles.star}
+                      onClick={() => {
+                        setRating(true);
+                      }}
+                    >
+                      {rating ? (
+                        <BsStarFill size={15} color="yellow" />
+                      ) : (
+                        <BsStar size={15} />
+                      )}
                     </div>
-                    <div className={styles.star}>
-                      <BsStar size={15} />
+                    <div
+                      className={styles.star}
+                      onClick={() => {
+                        setRating(true);
+                      }}
+                    >
+                      {rating ? (
+                        <BsStarFill size={15} color="yellow" />
+                      ) : (
+                        <BsStar size={15} />
+                      )}
                     </div>
                   </div>
                 </div>
@@ -97,7 +148,14 @@ const Man = () => {
                     <div
                       key={item.id}
                       className={styles.color}
-                      style={{ backgroundColor: item.color }}
+                      onClick={() => {
+                        setColorActive(item.color);
+                      }}
+                      style={
+                        colorActive === item.color
+                          ? { backgroundColor: item.active }
+                          : { backgroundColor: item.color }
+                      }
                     />
                   ))}
                 </div>

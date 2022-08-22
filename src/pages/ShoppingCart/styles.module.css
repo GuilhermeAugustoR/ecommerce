@@ -54,7 +54,10 @@
 
 @media (max-width: 1400px) {
   .fretecontainer {
-    width: 45rem;
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 20%;
   }
 }
 
@@ -70,8 +73,10 @@
 
 @media only screen and (max-width: 1400px) {
   .container {
-    width: 45rem;
-    height: 10rem;
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 20%;
   }
 }
 
@@ -180,7 +185,7 @@
 
 @media only screen and (max-width: 1400px) {
   .quantity {
-    margin-left: 4rem;
+    margin-left: 8rem;
   }
 }
 
@@ -255,7 +260,7 @@
 
 @media only screen and (max-width: 1400px) {
   .containerValue {
-    margin-left: 5rem;
+    margin-left: 7rem;
   }
 }
 
@@ -341,7 +346,7 @@
 @media only screen and (max-width: 1400px) {
   .remove {
     font-size: 1.1rem;
-    margin-left: 3rem;
+    margin-left: 9rem;
     margin-right: 1rem;
   }
 }
